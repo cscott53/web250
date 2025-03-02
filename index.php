@@ -17,6 +17,8 @@
                     <li><a class="content-link" href="#index">Home</a></li>
                     <li><a class="content-link" href="#intro">Intro</a></li>
                     <li><a class="content-link" href="#contract">Contract</a></li>
+                    <li><a href="joyofphp/src/">Joy Of PHP</a></li>
+                    <li><a href="joyofphp/src/samsusedcars.html">Sam's used cars</a></li>
                 </ul>
             </nav>
         </header>
