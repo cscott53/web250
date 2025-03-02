@@ -4,7 +4,7 @@
  * Demonstrates how to create a database, create a table, and insert records.
  */
 
-$mysqli = new mysqli('localhost', 'root', 'mypassword' );
+$mysqli = new mysqli('localhost', 'root', '' );
 
 
    if (!$mysqli) { 
@@ -14,7 +14,7 @@ $mysqli = new mysqli('localhost', 'root', 'mypassword' );
   
 
 /* Create table doesn't return a resultset */
-if ($mysqli->query("CREATE DATABASE Cars") === TRUE) {
+if ($mysqli->query("CREATE DATABASE if not exists Cars") === TRUE) {
     echo "<p>Database Cars created</P>";
 }
 else
@@ -23,9 +23,9 @@ else
 }
 //select a database to work with
 $mysqli->select_db("Cars");
-   Echo ("Selected the Cars database");
+   echo ("Selected the Cars database");
 
-$query = " CREATE TABLE INVENTORY 
+$query = " CREATE TABLE if not exists INVENTORY 
 ( VIN varchar(17) PRIMARY KEY, YEAR INT, Make varchar(50), Model varchar(100), 
 TRIM varchar(50), EXT_COLOR varchar (50), INT_COLOR varchar (50), ASKING_PRICE DECIMAL (10,2), 
 SALE_PRICE DECIMAL (10,2), PURCHASE_PRICE DECIMAL (10,2), MILEAGE int, TRANSMISSION varchar (50), 
