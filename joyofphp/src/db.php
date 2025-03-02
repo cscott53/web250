@@ -1,5 +1,5 @@
  <?php
-$mysqli = new mysqli('mySQL', 'root', 'verysecret', 'Cars' );
+$mysqli = new mysqli('mySQL', 'root', '', 'Cars' );
 /* check connection */
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
