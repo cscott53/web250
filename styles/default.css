@@ -80,3 +80,6 @@ figure img {
 footer {
     width: inherit;
 }
+.flexbreak {
+    flex-basis: 100%;
+}
