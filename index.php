@@ -19,6 +19,8 @@
                     <li><a class="content-link" href="#contract">Contract</a></li>
                     <li><a href="joyofphp/src/">Joy Of PHP</a></li>
                     <li><a href="joyofphp/src/samsusedcars.html">Sam's used cars</a></li>
+                    <li><a href="multipage_sites/superduper_static/index.htm">Multipage HTML</a></li>
+                    <li><a href="multipage_sites/superduper_php/index.php">Multipage PHP</a></li>
                 </ul>
             </nav>
         </header>

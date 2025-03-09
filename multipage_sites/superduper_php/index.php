@@ -28,10 +28,10 @@
 <!-- dynamic content goes here -->
 
 <?php
-	$sPage = $_GET["p"];
+	$sPage = isset($_GET["p"]) ? $_GET['p'] : '';
 	//echo ("You picked the page: " . $sPage); 
 	
-	if($sPage == "") {  $sPage = "home.php"; }
+	if($sPage != "") $sPage = 'home.php';
 	include($sPage);
 ?>
 
@@ -47,6 +47,5 @@
 
 	</a>
 </footer>
-
 </body>
 </html>
