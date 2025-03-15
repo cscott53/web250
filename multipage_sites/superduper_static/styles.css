@@ -41,6 +41,8 @@ img.one
 {
     float: left;
     margin: 10px;
+	width: 500px;
+	height: auto;
 }
 
 img.two
