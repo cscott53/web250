@@ -6,6 +6,9 @@
 <body>
 
 <h1>Sam's Used Cars</h1>
+<a href="ViewCarsWithStyle2.php">&larr;Back</a><br>
+<a href="samsusedcars.html">Sam's used cars home</a><br>
+<br>
 <?php 
 include 'db.php';
 $vin = $_GET['VIN'];
