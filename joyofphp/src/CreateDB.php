@@ -4,14 +4,7 @@
  * Demonstrates how to create a database, create a table, and insert records.
  */
 
-$mysqli = new mysqli('localhost', 'root', '' );
-
-
-   if (!$mysqli) { 
-      die('Could not connect'); 
-  } 
-  echo 'Connected successfully to mySQL. <BR>'; 
-  
+include 'db.php'; 
   $dbQuery=$mysqli->query("show databases like 'Cars'");
   if($dbQuery->num_rows>0)
       echo '<p>Cars database already exists</p>';
