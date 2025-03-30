@@ -14,9 +14,10 @@
             <h1>Charles Scott's Calm Sheep - WEB250</h1>
             <nav>
                 <ul>
-                    <li><a class="content-link" href="#index">Home</a></li>
-                    <li><a class="content-link" href="#intro">Intro</a></li>
-                    <li><a class="content-link" href="#contract">Contract</a></li>
+                    <li><a class="content-link" href="?pg=index">Home</a></li>
+                    <li><a class="content-link" href="?pg=intro">Intro</a></li>
+                    <li><a class="content-link" href="?pg=contract">Contract</a></li>
+                    <li><a href="carapp/">Used Cars</a></li>
                     <div class="flexbreak"></div>
                     <li><a href="joyofphp/src/">Joy Of PHP</a></li>
                     <li><a href="joyofphp/src/samsusedcars.html">Sam's used cars</a></li>

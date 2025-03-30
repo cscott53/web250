@@ -1,0 +1,23 @@
+.table {
+    display: grid;
+    width:fit-content;
+    border: .5px solid #ffa500;
+    margin: auto;
+}
+.table div {
+    border: .5px solid #ffa500;
+    padding: 2.5px 7px;
+}
+.th {
+    font-weight: bold;
+    text-align: center;
+}
+.formrow label {
+    white-space: pre;
+}
+.formrow label::after {
+    content: '\0009';
+}
+.del_link a, .edit_link a {
+    color: #005aff;
+}
