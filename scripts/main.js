@@ -12,10 +12,3 @@ function changePage() {
     })
 }
 changePage()
-/* document.querySelectorAll('.content-link').forEach(a=>a.onclick=e=>{
-    e.preventDefault()
-    let link = new URL(a.href)
-    let q=new URLSearchParams(link.search)
-    currentPage = q.get('pg')
-    changePage()
-}) */
