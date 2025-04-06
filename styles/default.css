@@ -62,17 +62,20 @@ nav li {
     align-items: center;
     justify-content: center;
 }
+footer nav li {
+    width: fit-content;
+    padding-left: .5em;
+    padding-right: .5em;
+}
 figure {
     width: fit-content;
-    margin: auto;
+    float: right;
 }
 figcaption {
     font-style: italic;
     text-align: center;
 }
 figure img {
-    height: 200px;
-    width: auto;
     margin: auto;
     display: block;
     margin-bottom: .25em;
@@ -82,4 +85,42 @@ footer {
 }
 .flexbreak {
     flex-basis: 100%;
+}
+fieldset {
+    all: unset;
+    width: 32%;
+    display: block;
+}
+#submit {
+    display: block;
+    margin: auto;
+}
+.formrow {
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    width: 40%;
+}
+fieldset,.formrow {
+    margin: .5em auto;
+}
+.imgBtn {
+    all: unset;
+}
+.imgBtn img {
+    border-radius: 3px;
+}
+.course {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin: 4px auto;
+}
+.course .imgBtn {
+    position: relative;
+    top: 2px;
+}
+#addCourse {
+    display: block;
+    margin: 2px auto;
 }

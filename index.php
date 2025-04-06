@@ -17,7 +17,9 @@
                     <li><a class="content-link" href="?pg=index">Home</a></li>
                     <li><a class="content-link" href="?pg=intro">Intro</a></li>
                     <li><a class="content-link" href="?pg=contract">Contract</a></li>
-                    <li><a href="carapp/">Used Cars</a></li>
+                    <li><a href="carapp/">Car App1</a></li>
+                    <li><a href="carapp2/">Car App2</a></li>
+                    <li><a class="content-link" href="?pg=intro_form">Intro form</a></li>
                     <div class="flexbreak"></div>
                     <li><a href="joyofphp/src/">Joy Of PHP</a></li>
                     <li><a href="joyofphp/src/samsusedcars.html">Sam's used cars</a></li>
@@ -30,6 +32,7 @@
             <div class="content" id="index"><?php include 'contents/index.php'?></div>
             <div class="content" id="intro"><?php include 'contents/introduction.php'?></div>
             <div class="content" id="contract"><?php include 'contents/contract.php'?></div>
+            <div class="content" id="intro_form"><?php include 'contents/intro_form.php'?></div>
         </main>
         <footer>
             <nav>

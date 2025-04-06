@@ -3,7 +3,7 @@
     and I won't put anything here I don't want the public to see
     - Charles W. Scott 1/13/2025</p>
 <figure>
-    <img src="images/verse.png" alt="">
+    <img src="images/verse.png" alt='"Come to me, all you who are weary and burdened, and I will give you rest. Take my yoke upon you and learn from me, for l am gentle and humble in heart, and you will find rest for your souls. For my goke is easy and my burden is light." Matthew 11:28-30'>
     <figcaption>One of my favorite Bible verses</figcaption>
 </figure>
 <ul>
