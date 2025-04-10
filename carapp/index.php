@@ -14,6 +14,7 @@
                     .forEach(el=>el.style.gridTemplateColumns=`repeat(${i},1fr)`)
         })
     </script>
+    
 </head>
 <body>
     <div id="page">
