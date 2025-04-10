@@ -54,15 +54,12 @@ nav ul {
 nav li {
     box-sizing: border-box;
     border: 1px solid orange;
-    width: 8em;
     height: 1.5em;
     border-radius: 1.5em;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-footer nav li {
     width: fit-content;
     padding-left: .5em;
     padding-right: .5em;
