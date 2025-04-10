@@ -14,7 +14,7 @@
                     .forEach(el=>el.style.gridTemplateColumns=`repeat(${i},1fr)`)
         })
     </script>
-    
+    <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="page">
