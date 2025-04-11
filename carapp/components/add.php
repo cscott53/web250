@@ -9,7 +9,8 @@
     <input type="text" id="price"></div><br>
     <div class="formrow"><label for="year">Year:</label>
     <input type="text" id="year"></div><br>
-    <button id="addNew">Add</button>
+    <button id="addNew">Add</button><br>
+    <button id="cancelAdd">Cancel</button>
     <script>
         document.getElementById('addNew').onclick=e=>{
             e.preventDefault()

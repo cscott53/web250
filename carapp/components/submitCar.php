@@ -1,3 +1,4 @@
+<a href="?pg=table">&larr;Back</a>
 <?php
     include 'db.php';
     include_once 'queryOutput.php';

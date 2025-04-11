@@ -18,6 +18,16 @@
 .formrow label::after {
     content: '\0009';
 }
-.del_link a, .edit_link a {
+.del_link, .edit_link {
     color: #005aff;
+}
+#add,.form, .form button {
+    margin: auto;
+    display: block;
+}
+.form {
+    width: fit-content;
+}
+a:visited:not(nav a):not([id]):not([class]) {
+    color: #00e;
 }
