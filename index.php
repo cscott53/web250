@@ -21,7 +21,7 @@
                     <li><a href="carapp2/">Car App2</a></li>
                     <li><a class="content-link" href="?pg=intro_form">Intro form</a></li>
                     <li><a class="content-link" href="?pg=fizzbuzz_form">Fizzbuzz form</a></li>
-                    <div class="flexbreak"></div>
+                    <!-- <div class="flexbreak"></div> -->
                     <li><a href="joyofphp/src/">Joy Of PHP</a></li>
                     <li><a href="joyofphp/src/samsusedcars.html">Sam's used cars</a></li>
                     <li><a href="multipage_sites/superduper_static/index.htm">Multipage HTML</a></li>

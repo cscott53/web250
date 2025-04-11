@@ -14,7 +14,8 @@
                 $price = $row['Price'];
                 $year = $row['Year'];
                 $row['links']=
-                "<a class='edit_link' href='?vin=$vin&pg=editCar'>Edit</a> " .
+                "<a class='edit_link' href='?vin=$vin&make=".urlencode($make).
+                "&model=".urlencode($model)."&year=$year&price=$price&pg=editCar'>Edit</a> " .
                 "<a class='del_link' href='?vin=$vin&pg=deleteCar'>Delete</a>";
                 unset($row['VIN']);
                 unset($row['Year']);

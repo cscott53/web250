@@ -24,6 +24,6 @@ th,td {
 .form {
     width: fit-content;
 }
-a:visited:not(nav a):not([id]):not([class]) {
+main a:visited:not([id]):not([class]) {
     color: #00e;
 }

@@ -124,6 +124,7 @@ fieldset,.formrow {
 #fizzbuzz_form .formrow {
     width: fit-content;
 }
-#fizzbuzz_form .formrow * {
+#fizzbuzz_form .formrow input,
+#fizzbuzz_form .formrow label {
     margin: 0 3px;
 }
