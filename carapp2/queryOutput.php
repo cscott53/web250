@@ -15,15 +15,18 @@
         }
     }
     function outputHtml($headers,$rows,$cols) {
-        echo "<div class='table cols$cols'>\n";
+        echo "<table>\n<thead><tr>\n";
         foreach ($headers as $header) {
-            echo "<div class='$header th'>$header</div>\n";
+            echo "<th class='$header'>$header</th>\n";
         }
+        echo "</tr></thead>\n<tbody>\n";
         foreach ($rows as $row) {
+            echo "<tr>\n";
             foreach ($row as $key => $value) {
-                echo "<div class='$key'>$value</div>\n";
+                echo "<td class='$key'>$value</td>\n";
             }
+            echo "</tr>\n";
         }
-        echo '</div>';
+        echo "</tbody>\n</table>";
     }
 ?>

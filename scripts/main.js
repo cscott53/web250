@@ -2,9 +2,8 @@
 let query=new URLSearchParams(location.search),
     url=location.href,
     currentPage = query.get('pg') ||
-    (url.includes('carapp2')
-    ? 'table' : (url.includes('carapp/')
-    ? 'view' : 'index'))
+    (url.includes('carapp')
+    ? 'table' : 'index')
 function changePage() {
     document.querySelectorAll('.content').forEach(e=>{
         if (e.id == currentPage)
