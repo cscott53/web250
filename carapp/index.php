@@ -28,6 +28,7 @@
                     <li><a class="content-link" href="?pg=view">Car App1</a></li>
                     <li><a href="../carapp2/?pg=table">Car App2</a></li>
                     <li><a href="../?pg=intro_form">Intro form</a></li>
+                    <li><a href="../?pg=fizzbuzzbang">Fizzbuzz bang</a></li>
                     <div class="flexbreak"></div>
                     <li><a class="content-link" href="?pg=view">View cars</a></li>
                     <li><a class="content-link" href="?pg=add">Add a car</a></li>

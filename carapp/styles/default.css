@@ -21,7 +21,3 @@
 .del_link a, .edit_link a {
     color: #005aff;
 }
-button {
-    margin: auto;
-    display: block;
-}
