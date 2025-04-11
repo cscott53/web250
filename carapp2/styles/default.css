@@ -8,10 +8,6 @@ th,td {
     border: .5px solid #ffa500;
     padding: 2.5px 7px;
 }
-.th {
-    font-weight: bold;
-    text-align: center;
-}
 .formrow label {
     white-space: pre;
 }
