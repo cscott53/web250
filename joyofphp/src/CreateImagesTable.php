@@ -6,16 +6,6 @@
 
 include 'db.php';
 
-   if (!$mysqli) { 
-      die('Could not connect: ' . mysqli_error($mysqli));
-  } 
-  echo 'Connected successfully to mySQL. <BR>'; 
-
-
-//select a database to work with
-$mysqli->select_db("Cars");
-   Echo ("Selected the Cars database <br>");
-
 $query = " CREATE TABLE IMAGES (ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT, VIN varchar(17), ImageFile varchar(250))";
 //echo "<p>***********</p>";
 //echo $query ;
