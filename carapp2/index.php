@@ -35,7 +35,7 @@
         </header>
         <main>
             <?php
-                $pages=['table','submitCar','editCar','updateCar','deleteCar'];
+                $pages=['table','viewCar','submitCar','editCar','updateCar','deleteCar'];
                 foreach ($pages as $page) {
                     $class = 'content';
                     if ($page == 'editCar') $class.=' form';
