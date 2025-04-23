@@ -19,21 +19,10 @@
 <body>
     <div id="page">
         <header>
-            <h1>Calm Sheep's used cars</h1>
-            <nav>
-                <ul>
-                    <li><a href="../?pg=index">Home</a></li>
-                    <li><a href="../?pg=intro">Intro</a></li>
-                    <li><a href="../?pg=contract">Contract</a></li>
-                    <li><a class="content-link" href="?pg=table">Car App1</a></li>
-                    <li><a href="../carapp2/?pg=table">Car App2</a></li>
-                    <li><a href="../?pg=intro_form">Intro form</a></li>
-                    <li><a href="../?pg=fizzbuzz_form">Fizzbuzz form</a></li>
-                    <!-- <div class="flexbreak"></div> -->
-                </ul>
-            </nav>
+            <?php include '../components/header.php'?>
         </header>
         <main>
+            <h2>Car app 1</h2>
             <?php
                 $pages=['table','submitCar','editCar','updateCar','deleteCar'];
                 foreach ($pages as $page) {

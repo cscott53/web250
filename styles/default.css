@@ -31,9 +31,6 @@ h1 {
 #current a {
     color: black;
 }
-h2 {
-    margin-top: 2em;
-}
 nav a, #page {
     color: orange;
     text-decoration: none;

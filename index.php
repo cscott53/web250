@@ -11,23 +11,7 @@
 <body>
     <div id="page">
         <header>
-            <h1>Charles Scott's Calm Sheep - WEB250</h1>
-            <nav>
-                <ul>
-                    <li><a class="content-link" href="?pg=index">Home</a></li>
-                    <li><a class="content-link" href="?pg=intro">Intro</a></li>
-                    <li><a class="content-link" href="?pg=contract">Contract</a></li>
-                    <li><a href="carapp/">Car App1</a></li>
-                    <li><a href="carapp2/">Car App2</a></li>
-                    <li><a class="content-link" href="?pg=intro_form">Intro form</a></li>
-                    <li><a class="content-link" href="?pg=fizzbuzz_form">Fizzbuzz</a></li>
-                    <!-- <div class="flexbreak"></div> -->
-                    <li><a href="joyofphp/src/">Joy Of PHP</a></li>
-                    <li><a href="joyofphp/src/samsusedcars.html">Sam's used cars</a></li>
-                    <li><a href="multipage_sites/superduper_static/index.htm">Multipage HTML</a></li>
-                    <li><a href="multipage_sites/superduper_php/index.php">Multipage PHP</a></li>
-                </ul>
-            </nav>
+            <?php include 'components/header.php'?>
         </header>
         <main>
             <div class="content" id="index"><?php include 'contents/index.php'?></div>
