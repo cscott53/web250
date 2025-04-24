@@ -66,11 +66,11 @@
         }
     })
     addForm.style.display = 'none'
-    addCar.onclick=()=>{
+    addCar.onclick=() => {
         addCar.style.display = 'none'
         addForm.style.display = 'block'
     }
-    cancelAdd.onclick=()=>{
+    cancelAdd.onclick=() => {
         addForm.querySelectorAll('input').forEach(e => {
             e.value=''
         })

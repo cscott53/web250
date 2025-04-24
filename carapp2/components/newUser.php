@@ -35,7 +35,7 @@
     <button id="signUp" type="button">Sign up</button>
 </form>
 <script>
-    document.getElementById('signUp').onclick=()=>{
+    document.getElementById('signUp').onclick=() => {
         let name=document.getElementById('name').value,
             username=document.getElementById('username').value,
             password=document.getElementById('password').value,

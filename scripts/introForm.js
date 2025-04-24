@@ -12,7 +12,7 @@ let name = document.getElementById('name'),
     img = document.getElementById('img'),
     caption = document.getElementById('caption')
 //
-submit.onclick=()=>{
+submit.onclick=() => {
     let date = new Date,
         dateStr = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`,
         image = new Image
@@ -67,7 +67,7 @@ function delRow(e) {
 }
 document.querySelectorAll('.course button').forEach(e=>e.onclick=()=>delRow(e))
 let addBtn = document.getElementById('addCourse')
-addBtn.onclick=()=>{
+addBtn.onclick=() => {
     let row = document.createElement('div')
     row.className='course'
     let course = document.createElement('input')

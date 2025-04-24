@@ -30,7 +30,7 @@
     </div>
     <button type="button" id="fizzbuzzBtn">Submit</button>
     <script>
-        document.getElementById('fizzbuzzBtn').onclick=()=>{
+        document.getElementById('fizzbuzzBtn').onclick=() => {
             let fName=document.getElementById('first').value,
                 mIntl=document.getElementById('middle').value,
                 lName=document.getElementById('last').value,

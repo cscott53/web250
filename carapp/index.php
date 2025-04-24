@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles/default.css">
     <script defer src="../scripts/main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded',()=>{
+        document.addEventListener('DOMContentLoaded',() => {
             for(let i=2; i<=12; i++)
                 document.querySelectorAll('.cols'+i)
                     .forEach(el=>el.style.gridTemplateColumns=`repeat(${i},1fr)`)
