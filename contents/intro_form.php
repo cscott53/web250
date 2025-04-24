@@ -28,7 +28,7 @@
                     <input type='text' value=\"$course\" placeholder='Course'>
                     <textarea placeholder='Reason'>$reason</textarea>
                     <button class='imgBtn'>
-                        <img src='images/del.svg'>
+                        <img src='images/del.svg' alt='-'>
                     </button>
                 </div>";
             }
