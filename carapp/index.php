@@ -22,7 +22,6 @@
             <?php include '../components/header.php'?>
         </header>
         <main>
-            <h2>Car app 1</h2>
             <?php
                 $pages=['table','submitCar','editCar','updateCar','deleteCar'];
                 foreach ($pages as $page) {

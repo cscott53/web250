@@ -44,7 +44,7 @@
             })();
         }
         array_shift($headers);
-        $headers[count($headers)-1]='';
+        echo"<div id='headerthing'>{$headers[count($headers)-1]}</div>";
         outputHtml($headers,$rows,4);
     } catch (Throwable $th) {
         echo $th;

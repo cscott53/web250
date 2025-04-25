@@ -1,3 +1,9 @@
+<h2>Car app1</h2>
+<button id="add">Add new car</button>
+<div id="addForm" class="form">
+    <?php include 'add.php'?>
+</div>
+<br>
 <?php
     include 'db.php';
     include_once 'queryOutput.php';
@@ -13,27 +19,29 @@
                 $model = $row['Model'];
                 $price = $row['Price'];
                 $year = $row['Year'];
-                $row['links']=
-                "<a class='edit_link' href='?vin=$vin&make=".urlencode($make).
-                "&model=".urlencode($model)."&year=$year&price=$price&pg=editCar'>Edit</a> " .
-                "<a class='del_link' href='?vin=$vin&pg=deleteCar'>Delete</a>";
+                $encodedMake = urlencode($make);
+                $encodedModel = urlencode($model);
+                $row['links']=<<<HTML
+                <a class='edit_link' href='?vin=$vin&make=$encodedMake&model=$encodedModel&year=$year&price=$price&pg=editCar'>
+                    <img src="images/edit.svg" alt="Edit">
+                </a>
+                <a class='del_link' href='?vin=$vin&pg=deleteCar'>
+                    <img src="images/del.svg" alt="Delete">
+                </a>
+                HTML;
                 unset($row['VIN']);
-                unset($row['Year']);
+                //unset($row['Year']);
                 $rows[$key]=$row;
             })();
         }
         array_shift($headers);
-        $headers[count($headers)-1]='';
+        $headers[]='';
         outputHtml($headers,$rows,4);
     } catch (Throwable $th) {
         echo $th;
     }
 ?>
 <br>
-<button id="add">Add new car</button>
-<div id="addForm" class="form">
-    <?php include 'add.php'?>
-</div>
 <script>
     let addForm = document.getElementById('addForm'),
         addCar = document.getElementById('add'),

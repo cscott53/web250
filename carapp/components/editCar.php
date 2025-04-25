@@ -1,15 +1,15 @@
 <a href="?pg=table">&larr;Back</a><br>
 <br><form>
-    <div class="formrow"><label for="vin">VIN:&#9;</label>
-    <input type="text" id="newVin"></div><br>
+    <div class="formrow"><span class="label">VIN: &Tab;</span>
+    <span class="vin"><?= $_GET['vin'] ?></span></div><br>
     <div class="formrow"><label for="make">Make:</label>
-    <input type="text" id="newMake"></div><br>
+    <input type="text" id="newMake" value="<?= $_GET['make'] ?>"></div><br>
     <div class="formrow"><label for="model">Model:</label>
-    <input type="text" id="newModel"></div><br>
+    <input type="text" id="newModel" value="<?= $_GET['model'] ?>"></div><br>
     <div class="formrow"><label for="price">Price:</label>
-    <input type="text" id="newPrice"></div><br>
+    <input type="text" id="newPrice" value="<?= $_GET['price'] ?>"></div><br>
     <div class="formrow"><label for="year">Year:</label>
-    <input type="text" id="newYear"></div><br>
+    <input type="text" id="newYear" value="<?= $_GET['year'] ?>"></div><br>
     <button id="update">Update</button>
     <script>
         let cap=s=>s[0].toUpperCase()+s.slice(1)
