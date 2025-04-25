@@ -1,4 +1,4 @@
-<a href="?pg=table">&larr;Back</a>
+<a href="?pg=table" class="backBtn">&larr;Back</a>
 <?php
     include 'db.php';
     include_once 'queryOutput.php';

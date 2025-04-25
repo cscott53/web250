@@ -32,7 +32,7 @@
         Mileage: {$row['mileage']}<br>
         Transmission: {$row['transmission']}<br>
         <br>
-        <a href="?pg=table">&larr;Back</a><br>
+        <a href="?pg=table" class="backBtn">&larr;Back</a><br>
         HTML;
     }
 ?>

@@ -1,4 +1,4 @@
-<a href="?pg=table">&larr;Back</a><br>
+<a href="?pg=table" class="backBtn">&larr;Back</a><br>
 <br><form>
     <div class="formrow"><label for="vin">VIN:&#9;</label>
     <input type="text" id="newVin"></div><br>

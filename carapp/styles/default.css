@@ -8,11 +8,12 @@ th,td {
     border: .5px solid #ffa500;
     padding: 2.5px 7px;
 }
-.formrow label, .formrow .label {
-    white-space: pre;
+.formrow {
+    display:inline-block;
 }
-.formrow label::after {
-    content: '\0009';
+.formrow input {
+    width: 10ch;
+    margin: 0 .5em;
 }
 .del_link, .edit_link {
     text-decoration: none;
@@ -24,6 +25,7 @@ th,td {
 .form {
     width: fit-content;
 }
-main a:visited:not([id]):not([class]) {
-    color: #00e;
+.backBtn {
+    color: #ffa500;
+    text-decoration: none;
 }

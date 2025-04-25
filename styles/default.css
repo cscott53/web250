@@ -89,13 +89,13 @@ button {
     display: block;
     margin: auto;
 }
-.formrow {
+div.formrow {
     display: flex;
     justify-content:space-between;
     align-items: flex-start;
     width: 40%;
 }
-fieldset,.formrow {
+fieldset,div.formrow {
     margin: .5em auto;
 }
 .imgBtn {
