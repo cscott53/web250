@@ -15,7 +15,8 @@
         let cap = (str) => str[0].toUpperCase() + str.slice(1);
         document.getElementById('update').onclick = (e) => {
             event.preventDefault();
-            let [vin, make, model, price, year] = ['vin', 'make', 'model', 'price', 'year'].map((field) => 
+            let vin = document.querySelector('.vin').innerText;
+            let [make, model, price, year] = ['make', 'model', 'price', 'year'].map((field) =>
                 document.getElementById('new' + cap(field)).value
             );
             location.href = `?vin=${encodeURIComponent(vin)}&make=${encodeURIComponent(make)}&model=${encodeURIComponent(model)}&price=${encodeURIComponent(price)}&year=${encodeURIComponent(year)}&pg=updateCar`;
