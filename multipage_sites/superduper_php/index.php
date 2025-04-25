@@ -30,7 +30,7 @@
 	$sPage = isset($_GET["p"]) ? $_GET['p'] : '';
 	//echo ("You picked the page: " . $sPage); 
 	
-	if($sPage != "") $sPage = 'home';
+	if ($sPage != "") $sPage = 'home';
 	include($sPage.'.php');
 ?>
 

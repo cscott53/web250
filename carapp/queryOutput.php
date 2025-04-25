@@ -6,7 +6,7 @@
             while ($row=mysqli_fetch_assoc($result))
                 $table_rows[]=$row;
             $headers=[];
-            if(count($table_rows)>0)
+            if (count($table_rows)>0)
                 foreach ($table_rows[0] as $key => $value)
                     $headers[] = $key;
             return ['headers' => $headers,'rows' => $table_rows];

@@ -23,7 +23,7 @@ else
 
   echo "The relative name of the file for use in the IMG tag is " . $imagename ."<br><br>". "\n";;
 
-if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
+if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
     echo "The file ".  basename( $_FILES['file']['name']). " has been uploaded<br>". "\n";
    
     // Create a database entry for this image

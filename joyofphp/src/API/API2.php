@@ -30,7 +30,7 @@ return $car_list;
 }
 
 function delete_car(){
-    if(isset($_GET['VIN'])){
+    if (isset($_GET['VIN'])){
         header("Access-Control-Allow-Origin: *");
         include 'db.php';
         $vin = $_GET['VIN'];
@@ -38,7 +38,7 @@ function delete_car(){
         /* Try to query the database */
         if ($result = $mysqli->query($query)) {
              // The delete was successful.
-            if($result != 0){
+            if ($result != 0){
                 $result = array('success'=>1);
                 return $result;
             }

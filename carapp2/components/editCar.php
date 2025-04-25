@@ -25,16 +25,16 @@
         let cap=s=>s[0].toUpperCase()+s.slice(1)
         if (location.href.includes('?')) {
             let queryParams=new URLSearchParams(location.search)
-            document.querySelectorAll('.formrow').forEach(e=>{
+            document.querySelectorAll('.formrow').forEach((e) => {
                 let input=e.querySelector('input')
                 input.value = queryParams.get(input.id.replace('new','').toLowerCase())
             })
         }
-        document.getElementById('update').onclick=e=>{
+        document.getElementById('update').onclick=(e) => {
             e.preventDefault()
             let [vin,make,model,price,year,trim,color,interior,mileage,transmission]=
             ['vin','make','model','price','year','trim','color','interior','mileage','transmission']
-            .map(e=>
+            .map((e) =>
                 document.getElementById('new'+cap(e)).value
             )
             location.href=`?vin=${vin}&make=${make}&model=${model}&price=${price}&year=${year}&trim=${trim}&color=${color}&interior=${interior}&mileage=${mileage}&transmission=${transmission}&pg=updateCar`

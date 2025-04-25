@@ -15,7 +15,7 @@ try {
     //echo $query ;
     //echo "<p>***********</p>";
     $tableQuery=$mysqli->query("show tables like 'inventory'");
-    if($tableQuery->num_rows>0) echo "<p>Table 'inventory' exists</p>";
+    if ($tableQuery->num_rows>0) echo "<p>Table 'inventory' exists</p>";
     elseif ($mysqli->query($query)) 
         echo "<p>Table 'inventory' created</p>";
     else

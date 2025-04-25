@@ -11,7 +11,7 @@
         );
         SQL;
         $crRes=$mysqli->query($createTableQuery);
-        if(!checkIfUserExists($mysqli,'web250teacher')){
+        if (!checkIfUserExists($mysqli,'web250teacher')){
             //user for testing
             $insertQuery=<<<SQL
             insert into users(name,username,password) values('web250teacher','web250teacher','DapperViper666');

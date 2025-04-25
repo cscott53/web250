@@ -18,7 +18,7 @@ submit.onclick=() => {
         image = new Image
     if (img.files.length > 0) {
         let reader = new FileReader
-        reader.onload=e=> {
+        reader.onload=(e) => {
             image.src=e.target.result
             updatePage()
         }
@@ -49,7 +49,7 @@ submit.onclick=() => {
                     courses = document.createElement('ul')
                 li.innerHTML = `<strong>${legend}</strong>`
                 for (let c of item.querySelectorAll('.course')) {
-                    let [course,reason]=[...c.querySelectorAll('input')].map(e=>e.value)
+                    let [course,reason]=[...c.querySelectorAll('input')].map((e) =>e.value)
                     let listItem = document.createElement('li')
                     listItem.innerHTML = `${course} - ${reason}`
                     courses.appendChild(listItem)
@@ -65,7 +65,7 @@ function delRow(e) {
     let row=e.parentElement
     row.parentElement.removeChild(row)
 }
-document.querySelectorAll('.course button').forEach(e=>e.onclick=()=>delRow(e))
+document.querySelectorAll('.course button').forEach((e) =>e.onclick=()=>delRow(e))
 let addBtn = document.getElementById('addCourse')
 addBtn.onclick=() => {
     let row = document.createElement('div')

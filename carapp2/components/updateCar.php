@@ -2,7 +2,7 @@
 <?php
     include 'db.php';
     include_once 'queryOutput.php';
-    if($_GET['pg']=='updateCar'){
+    if ($_GET['pg']=='updateCar'){
         extract($_GET);
         try {
             $query=<<<SQL
@@ -22,7 +22,7 @@
             $vin_query=queryOutput($mysqli,"select VIN
                                 from inventory
                                 where VIN = '$vin'")['rows'];
-            if(count($vin_query)>0) {
+            if (count($vin_query)>0) {
                 $mysqli->query($query);
                 echo "Successfully updated car with VIN $vin<br>";
             } else echo "A car with VIN $vin doesn't exist<br>";

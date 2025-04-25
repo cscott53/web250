@@ -45,23 +45,23 @@
 <script>
     let addForm = document.getElementById('addForm'),
         addCar = document.getElementById('add'),
-        cancelAdd = document.getElementById('cancelAdd')
-    document.querySelectorAll('.del_link').forEach(e => {
-        e.onclick=ev=>{
-            if(!confirm('Are you sure you want to delete this car?'))
-                ev.preventDefault()
-        }
-    })
-    addForm.style.display = 'none'
+        cancelAdd = document.getElementById('cancelAdd');
+    document.querySelectorAll('.del_link').forEach((e) => {
+        e.onclick=(ev) => {
+            if (!confirm('Are you sure you want to delete this car?'))
+                ev.preventDefault();
+        };
+    });
+    addForm.style.display = 'none';
     addCar.onclick=() => {
-        addCar.style.display = 'none'
-        addForm.style.display = 'block'
-    }
+        addCar.style.display = 'none';
+        addForm.style.display = 'block';
+    };
     cancelAdd.onclick=() => {
-        addForm.querySelectorAll('input').forEach(e => {
-            e.value=''
-        })
-        addForm.style.display = 'none'
-        addCar.style.display = 'block'
-    }
+        addForm.querySelectorAll('input').forEach((e) =>
+            e.value = ''
+        );
+        addForm.style.display = 'none';
+        addCar.style.display = 'block';
+    };
 </script>

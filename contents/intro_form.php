@@ -23,7 +23,7 @@
                 'MUS110 Music appreciation'=>"for some reason I had to choose a gen-ed class (either music or art or philosophy or some other course I can't remember)",
                 'CSC114 Artificial Intelligence'=>"had to have another 'elective' class in order to have a full 12+ credit hour semester for sponsorship by the DSB (division of services for the blind/visually impaired) and one of these classes was only 2 credits…also I wanted to learn a bit about AI"
             ];
-            foreach ($courses as $course => $reason) {
+            foreach ($courses as $cours(e) => $reason) {
                 echo "<div class='course'>
                     <input type='text' value=\"$course\" placeholder='Course'>
                     <textarea placeholder='Reason'>$reason</textarea>

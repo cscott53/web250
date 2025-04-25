@@ -7,13 +7,6 @@
     <link rel="stylesheet" href="styles/default.css">
     <link rel="stylesheet" href="../styles/default.css">
     <script defer src="../scripts/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded',() => {
-            for(let i=2; i<=12; i++)
-                document.querySelectorAll('.cols'+i)
-                    .forEach(el=>el.style.gridTemplateColumns=`repeat(${i},1fr)`)
-        })
-    </script>
     <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
 </head>
 <body>

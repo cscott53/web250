@@ -12,13 +12,13 @@
     <input type="text" id="newYear" value="<?= $_GET['year'] ?>"></span><br>
     <br><button type="button" id="update">Update</button>
     <script>
-        let cap=s => s[0].toUpperCase()+s.slice(1)
-        document.getElementById('update').onclick=e=>{
-            e.preventDefault()
-            let [vin,make,model,price,year]=['vin','make','model','price','year'].map(e =>
-                document.getElementById('new'+cap(e)).value
-            )
-            location.href=`?vin=${vin}&make=${make}&model=${model}&price=${price}&year=${year}&pg=updateCar`
-        }
+        let cap = (str) => str[0].toUpperCase() + str.slice(1);
+        document.getElementById('update').onclick = (e) => {
+            event.preventDefault();
+            let [vin, make, model, price, year] = ['vin', 'make', 'model', 'price', 'year'].map((field) => 
+                document.getElementById('new' + cap(field)).value
+            );
+            location.href = `?vin=${encodeURIComponent(vin)}&make=${encodeURIComponent(make)}&model=${encodeURIComponent(model)}&price=${encodeURIComponent(price)}&year=${encodeURIComponent(year)}&pg=updateCar`;
+        };
     </script>
 </form>
