@@ -12,7 +12,7 @@
         $output = queryOutput($mysqli,$query);
         $headers = $output['headers'];
         $rows = $output['rows'];
-        foreach ($rows as $key=>$row) {
+        foreach ($rows as $key=> $row) {
             (function()use($key,&$row,&$rows){
                 $vin = $row['VIN'];
                 $make = $row['Make'];
@@ -58,7 +58,7 @@
         addForm.style.display = 'block';
     };
     cancelAdd.onclick=() => {
-        addForm.querySelectorAll('input').forEach((e) =>
+        addForm.querySelectorAll('input').forEach((e) => 
             e.value = ''
         );
         addForm.style.display = 'none';

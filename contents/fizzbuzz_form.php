@@ -36,11 +36,11 @@
                 lName=document.getElementById('last').value,
                 defWord=document.getElementById('defaultWord').value,
                 count=document.getElementById('count').value,
-                words=[1,2,3].map((e) =>document.getElementById('word'+e).value),
-                divisors=[1,2,3].map((e) =>document.getElementById('divisor'+e).value)
+                words=[1,2,3].map((e) => document.getElementById('word'+e).value),
+                divisors=[1,2,3].map((e) => document.getElementById('divisor'+e).value);
             location.href=
                 `?pg=fizzbuzz_bang&name=${fName}_${mIntl}_${lName}&defWord=${defWord}` +
-                `&count=${count}&words=${words.join('_')}&divisors=${divisors.join('_')}`
-        }
+                `&count=${count}&words=${words.join('_')}&divisors=${divisors.join('_')}`;
+        };
     </script>
 </form>

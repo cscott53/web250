@@ -14,7 +14,7 @@
     <script>
         document.getElementById('addNew').onclick= (e) => {
             e.preventDefault();
-            let [vin,make,model,price,year]=['vin','make','model','price','year'].map((e) =>
+            let [vin,make,model,price,year]=['vin','make','model','price','year'].map((e) => 
                 document.getElementById(e).value
             );
             location.href=`?vin=${vin}&make=${make}&model=${model}&price=${price}&year=${year}&pg=submitCar`;

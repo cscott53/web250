@@ -11,7 +11,7 @@
         document.addEventListener('DOMContentLoaded',() => {
             for(let i=2; i<=12; i++)
                 document.querySelectorAll('.cols'+i)
-                    .forEach(el=>el.style.gridTemplateColumns=`repeat(${i},1fr)`)
+                    .forEach(el=> el.style.gridTemplateColumns=`repeat(${i},1fr)`)
         })
     </script>
     <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
@@ -24,28 +24,12 @@
         <main>
             <h2>Car app 2</h2>
             <?php
-                $pages=['table','viewCar','submitCar','editCar','updateCar','deleteCar'];
-                foreach ($pages as $page) {
-                    $class = 'content';
-                    if ($page == 'editCar') $class.=' form';
-                    echo "<div class='$class' id='$page'>\n";
-                    include "components/$page.php";
-                    echo "</div>";
-                }
+                $page = isset($_GET['pg']) ? $_GET['pg'] : 'userTable';
+                include "components/$page.php";
             ?>
         </main>
         <footer>
-            <nav>
-                <ul>
-                    <li><a href="https://github.com/cscott53">GitHub</a></li>
-                    <li><a href="https://cscott53.github.io">GitHub.io</a></li>
-                    <li><a href="https://cscott53.infinityfreeapp.com/web250">WEB250.io</a></li>
-                    <li><a href="https://www.freecodecamp.org/cscott53">freeCodeCamp</a></li>
-                    <li><a href="https://www.codecademy.com/profiles/method4794308211">Codecademy</a></li>
-                    <li><a href="https://jsfiddle.net/u/cscott53/">JSFiddle</a></li>
-                    <li><a href="https://www.linkedin.com/in/charles-scott-545b4228a/">LinkedIn</a></li>
-                </ul>
-            </nav>
+            <?php include '../components/footer.php'?>
         </footer>
     </div>
 </body>

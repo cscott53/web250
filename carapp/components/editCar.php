@@ -16,7 +16,7 @@
         document.getElementById('update').onclick = (e) => {
             event.preventDefault();
             let vin = document.querySelector('.vin').innerText;
-            let [make, model, price, year] = ['make', 'model', 'price', 'year'].map((field) =>
+            let [make, model, price, year] = ['make', 'model', 'price', 'year'].map((field) => 
                 document.getElementById('new' + cap(field)).value
             );
             location.href = `?vin=${encodeURIComponent(vin)}&make=${encodeURIComponent(make)}&model=${encodeURIComponent(model)}&price=${encodeURIComponent(price)}&year=${encodeURIComponent(year)}&pg=updateCar`;

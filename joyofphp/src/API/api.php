@@ -23,7 +23,7 @@ function get_cars()
    // print_r( $car_list);
 // Loop through all the rows returned by the query, creating a table row for each
     while ($result_ar = mysqli_fetch_assoc($result)) {
-        $current_car = array("make" =>  $result_ar['Make'], "model" =>$result_ar['Model'], "vin" => $result_ar['VIN'], "price" => number_format($result_ar['ASKING_PRICE'],0) );
+        $current_car = array("make" =>  $result_ar['Make'], "model" => $result_ar['Model'], "vin" => $result_ar['VIN'], "price" => number_format($result_ar['ASKING_PRICE'],0) );
         array_push($car_list, $current_car);
         }
     $mysqli->close();
@@ -46,7 +46,7 @@ function add_car(){
         if ($result = $mysqli->query($query)) {
              // The delete was successful.
             if ($result != 0){
-                $result = array('success'=>1);
+                $result = array('success'=> 1);
                 return $result;
             }
         }
@@ -67,7 +67,7 @@ function delete_car(){
         if ($result = $mysqli->query($query)) {
              // The delete was successful.
             if ($result != 0){
-                $result = array('success'=>1);
+                $result = array('success'=> 1);
                 return $result;
             }
         }
@@ -93,7 +93,7 @@ function get_car_by_vin( $vin)
 // Loop through all the rows returned by the query, creating a table row for each
   //  echo "Searching for ".$vin;
     while ($result_ar = mysqli_fetch_assoc($result)) {
-        $current_car = array("make" =>  $result_ar['Make'], "model" =>$result_ar['Model'], "year"=>$result_ar['YEAR'],  "color" => $result_ar['EXT_COLOR'], "mileage" =>  $result_ar['MILEAGE'],  "vin" => $result_ar['VIN'], "price" => number_format($result_ar['ASKING_PRICE'],0) );
+        $current_car = array("make" =>  $result_ar['Make'], "model" => $result_ar['Model'], "year"=> $result_ar['YEAR'],  "color" => $result_ar['EXT_COLOR'], "mileage" =>  $result_ar['MILEAGE'],  "vin" => $result_ar['VIN'], "price" => number_format($result_ar['ASKING_PRICE'],0) );
     }
 
     $mysqli->close();

@@ -1,3 +1,8 @@
+<button id="add">Add new car</button>
+<div id="addForm" class="form">
+    <?php include 'add.php'?>
+</div>
+<br>
 <?php
     include 'db.php';
     include_once 'queryOutput.php';
@@ -20,8 +25,7 @@
         $headers = $output['headers'];
         $rows = $output['rows'];
         $everything = queryOutput($mysqli,$query2)['rows'];
-        // print_r($everything);
-        foreach ($rows as $key=>$row) {
+        foreach ($rows as $key=> $row) {
             (function()use($key,&$row,&$rows,&$everything){
                 $vin = $row['VIN'];
                 $make = $row['Make'];
@@ -33,28 +37,29 @@
                 $interior = $everything[$key]['interior'];
                 $mileage = $everything[$key]['mileage'];
                 $transmission = $everything[$key]['transmission'];
-                $row['Make']="<a href='?vin=$vin&pg=viewCar'>$make</a>";
-                $row['links']=
-                "<a class='edit_link' href='?vin=$vin&make=".urlencode($make)."&model=".urlencode($model).
-                "&year=$year&price=$price&trim=$trim&color=$color&interior=$interior&mileage=$mileage&transmission=$transmission&pg=editCar'>Edit</a> " .
-                "<a class='del_link' href='?vin=$vin&pg=deleteCar'>Delete</a>";
+                $row['Make']="<a class='view_link' href='?vin=$vin&pg=viewCar'>$make</a>";
+                $encodedMake = urlencode($make);
+                $encodedModel = urlencode($model);
+                $row['links']=<<<HTML
+                <a class='edit_link' href='?vin=$vin&make=$encodedMake&model=$encodedModel&year=$year&price=$price&pg=editCar'>
+                    <img src="images/edit.svg" alt="Edit">
+                </a>
+                <a class='del_link' href='?vin=$vin&pg=deleteCar'>
+                    <img src="images/del.svg" alt="Delete">
+                </a>
+                HTML;
                 unset($row['VIN']);
-                unset($row['Year']);
+                //unset($row['Year']);
                 $rows[$key]=$row;
             })();
         }
         array_shift($headers);
-        echo"<div id='headerthing'>{$headers[count($headers)-1]}</div>";
+        $headers[]='';
         outputHtml($headers,$rows,4);
     } catch (Throwable $th) {
         echo $th;
     }
 ?>
-<br>
-<button id="add">Add new car</button>
-<div id="addForm" class="form">
-    <?php include 'add.php'?>
-</div>
 <script>
     let addForm = document.getElementById('addForm'),
         addCar = document.getElementById('add'),

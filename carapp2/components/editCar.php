@@ -22,7 +22,7 @@
     <input type="text" id="newTransmission"></div><br>
     <button id="update">Update</button>
     <script>
-        let cap=s=>s[0].toUpperCase()+s.slice(1)
+        let cap=s=> s[0].toUpperCase()+s.slice(1)
         if (location.href.includes('?')) {
             let queryParams=new URLSearchParams(location.search)
             document.querySelectorAll('.formrow').forEach((e) => {
@@ -34,7 +34,7 @@
             e.preventDefault()
             let [vin,make,model,price,year,trim,color,interior,mileage,transmission]=
             ['vin','make','model','price','year','trim','color','interior','mileage','transmission']
-            .map((e) =>
+            .map((e) => 
                 document.getElementById('new'+cap(e)).value
             )
             location.href=`?vin=${vin}&make=${make}&model=${model}&price=${price}&year=${year}&trim=${trim}&color=${color}&interior=${interior}&mileage=${mileage}&transmission=${transmission}&pg=updateCar`
