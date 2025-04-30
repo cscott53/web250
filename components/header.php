@@ -6,6 +6,7 @@
         <li><a href="/web250/?pg=contract">Contract</a></li>
         <li><a href="/web250/carapp/">Car App1</a></li>
         <li><a href="/web250/carapp2/">Car App2</a></li>
+        <li><a href="/web250/project/">Project</a></li>
         <li><a href="/web250/?pg=intro_form">Intro form</a></li>
         <li><a href="/web250/?pg=fizzbuzz_form">Fizzbuzz</a></li>
         <li><a href="/web250/business_card.html">Business card</a></li>
