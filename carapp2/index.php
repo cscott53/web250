@@ -6,14 +6,6 @@
     <title>Calm Sheep's used cars</title>
     <link rel="stylesheet" href="styles/default.css">
     <link rel="stylesheet" href="../styles/default.css">
-    <script defer src="../scripts/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded',() => {
-            for(let i=2; i<=12; i++)
-                document.querySelectorAll('.cols'+i)
-                    .forEach(el=> el.style.gridTemplateColumns=`repeat(${i},1fr)`)
-        })
-    </script>
     <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -24,7 +16,7 @@
         <main>
             <h2>Car app 2</h2>
             <?php
-                $page = isset($_GET['pg']) ? $_GET['pg'] : 'userTable';
+                $page = isset($_GET['pg']) ? $_GET['pg'] : 'table';
                 include "components/$page.php";
             ?>
         </main>

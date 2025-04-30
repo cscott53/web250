@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calm Sheep's used cars</title>
-    <link rel="stylesheet" href="styles/default.css">
     <link rel="stylesheet" href="../styles/default.css">
-    <script defer src="../scripts/main.js"></script>
+    <link rel="stylesheet" href="styles/default.css">
     <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -16,14 +15,10 @@
         </header>
         <main>
             <?php
-                $pages=['table','submitCar','editCar','updateCar','deleteCar'];
-                foreach ($pages as $page) {
-                    $class = 'content';
-                    if ($page == 'editCar') $class.=' form';
-                    echo "<div class='$class' id='$page'>\n";
-                    include "components/$page.php";
-                    echo "</div>";
-                }
+                if (isset($_GET['pg']))
+                    include 'components/'.$_GET['pg'].'.php';
+                else
+                    include 'components/table.php';
             ?>
         </main>
         <footer>

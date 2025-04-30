@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Charles Scott's Calm Sheep - WEB250 - Home</title>
     <link rel="stylesheet" href="styles/default.css">
-    <script src="scripts/main.js" defer></script>
+    <!-- <script src="scripts/main.js" defer></script> -->
     <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -14,12 +14,12 @@
             <?php include 'components/header.php'?>
         </header>
         <main>
-            <div class="content" id="index"><?php include 'contents/index.php'?></div>
-            <div class="content" id="intro"><?php include 'contents/introduction.php'?></div>
-            <div class="content" id="contract"><?php include 'contents/contract.php'?></div>
-            <div class="content" id="intro_form"><?php include 'contents/intro_form.php'?></div>
-            <div class="content" id="fizzbuzz_form"><?php include 'contents/fizzbuzz_form.php'?></div>
-            <div class="content" id="fizzbuzz_bang"><?php include 'contents/fizzbuzz_bang.php'?></div>
+            <?php
+                if (isset($_GET['pg']))
+                    include 'contents/'.$_GET['pg'].'.php';
+                else
+                    include 'contents/index.php';
+            ?>
         </main>
         <footer>
             <?php include 'components/footer.php'?>

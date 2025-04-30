@@ -2,7 +2,7 @@
 <nav>
     <ul>
         <li><a href="/web250/?pg=index">Home</a></li>
-        <li><a href="/web250/?pg=intro">Intro</a></li>
+        <li><a href="/web250/?pg=introduction">Intro</a></li>
         <li><a href="/web250/?pg=contract">Contract</a></li>
         <li><a href="/web250/carapp/">Car App1</a></li>
         <li><a href="/web250/carapp2/">Car App2</a></li>

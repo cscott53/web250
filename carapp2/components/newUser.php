@@ -5,20 +5,20 @@
         $createTableQuery=<<<SQL
         create table if not exists users(
             id int primary key auto_increment,
-            first varchar(20) not null,
-            last varchar(20) not null,
+            first varchar(20) default '',
+            last varchar(20) default '',
             username varchar(50) not null unique,
             password varchar(50) not null
         );
         SQL;
         $crRes=$mysqli->query($createTableQuery);
-        /* if (!checkIfUserExists($mysqli,'web250teacher')){
+        if (!checkIfUserExists($mysqli,'web250User')) {
             //user for testing
             $insertQuery=<<<SQL
-            insert into users(name,username,password) values('web250teacher','web250teacher','DapperViper666');
+            insert into users(username,password) values('web250User','LetMeIn!');
             SQL;
             $insRes=$mysqli->query($insertQuery);
-        } */
+        }
     } catch (Throwable $th) {
         echo $th;
     }
@@ -37,6 +37,7 @@
     <input type="password" id="confirmPass" required></div>
     <button id="signUp" type="button">Sign up</button>
 </form>
+<p>Already a user? <a href="?pg=login">Login</a></p>
 <script>
     document.getElementById('signUp').onclick=() => {
         let first=document.getElementById('first').value,
@@ -65,8 +66,7 @@
                 alert('User already exists')
             } else if (data.userCreated) {
                 alert('User created successfully')
-                currentPage='userTable'
-                changePage()
+                location.href='?pg=userTable'
             } else {
                 alert('Error creating user')
             }
