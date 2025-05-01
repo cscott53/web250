@@ -21,7 +21,7 @@
         .then((response) => response.json())
         .then((data) => {
             if (data.loggedIn) {
-                alert('Login successful');
+                //alert('Login successful');
                 location.href = '?pg=loggedIn';
                 document.cookie = `user=${username}; path=/web250/project/; max-age=7200;`;
                 document.cookie = `loggedIn=true; path=/web250/project/; max-age=7200;`;
