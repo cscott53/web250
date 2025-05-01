@@ -121,6 +121,9 @@ fieldset,div.formrow {
 #fizzbuzz_form .formrow {
     width: fit-content;
 }
+a {
+    color: #ffa500;
+}
 #fizzbuzz_form .formrow input,
 #fizzbuzz_form .formrow label {
     margin: 0 3px;

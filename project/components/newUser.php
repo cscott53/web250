@@ -65,10 +65,12 @@
             if (data.userExists) {
                 alert('User already exists')
             } else if (data.userCreated) {
-                alert('User created successfully')
-                location.href='?pg=userTable'
+                //alert('User created successfully')
+                location.href='?pg=loggedIn'
+                document.cookie = `user=${username}; path=/web250/project/; max-age=7200;`;
+                document.cookie = `loggedIn=true; path=/web250/project/; max-age=7200;`;
             } else {
-                alert('Error creating user')
+                alert('Error creating user') //probably won't happen
             }
         }).catch((err) => {
             console.error(err)

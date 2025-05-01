@@ -22,7 +22,9 @@
         .then((data) => {
             if (data.loggedIn) {
                 alert('Login successful');
-                location.href = '?pg=userTable';
+                location.href = '?pg=loggedIn';
+                document.cookie = `user=${username}; path=/web250/project/; max-age=7200;`;
+                document.cookie = `loggedIn=true; path=/web250/project/; max-age=7200;`;
             } else alert('Invalid username or password');
         });
     }

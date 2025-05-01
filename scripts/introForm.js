@@ -11,7 +11,9 @@ let name = document.getElementById('name'),
     main = document.querySelector('main'),
     img = document.getElementById('img'),
     caption = document.getElementById('caption');
-function updatePage() {
+function updatePage(image) {
+    let date = new Date,
+        dateStr = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
     main.innerHTML=`<h2>Introduction</h2>
     <p>I understand that what I put here is publicly available on the web and I won't put anything here I don't want the public to see - ${name.value} ${dateStr}</p>
     <figure>
@@ -45,19 +47,17 @@ function updatePage() {
     main.appendChild(list);
 }
 submit.onclick=() => {
-    let date = new Date,
-        dateStr = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`,
-        image = new Image;
+    let image = new Image;
     if (img.files.length > 0) {
         let reader = new FileReader;
         reader.onload=(e) => {
             image.src=e.target.result;
-            updatePage();
+            updatePage(image);
         };
         reader.readAsDataURL(img.files[0]);
     } else {
         image.src = 'images/verse.png';
-        updatePage();
+        updatePage(image);
     }
 
 };
