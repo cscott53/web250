@@ -1,22 +1,31 @@
 <?php
-    include 'db.php';
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: POST, PUT, DELETE, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type');
     header('Content-Type: application/json');
-    switch($_SERVER['REQUEST_METHOD']) {
-        case 'POST':
-            $data = json_decode(file_get_contents('php://input'), true);
+    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+        http_response_code(204);
+        exit;
+    }
+    include 'db.php';
+    if($_SERVER['REQUEST_METHOD'] != 'POST') {
+        echo json_encode(['error' => 'Invalid request method']);
+        exit;
+    }
+    $data = json_decode(file_get_contents('php://input'), true);
+    $action = $data['action'] ?? '';
+    $query = '';
+    switch($action) {
+        case 'add':
             $query = "insert into inventory (id,name,quantity,price) values ('{$data['id']}','{$data['name']}',{$data['quantity']},{$data['price']})";
             break;
-        case 'PUT':
-            $data = json_decode(file_get_contents('php://input'), true);
+        case 'edit':
             $query = "update inventory set name='{$data['name']}', quantity={$data['quantity']}, price={$data['price']} where id='{$data['id']}'";
             break;
-        case 'DELETE':
-            $data = json_decode(file_get_contents('php://input'), true);
+        case 'del':
             $query = "delete from inventory where id='{$data['id']}'";
             break;
         default:
-            http_response_code(405);
-            echo json_encode(['error' => 'Method not supported']); //probably won't happen
             break;
     }
     try {

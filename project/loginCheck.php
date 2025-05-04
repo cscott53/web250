@@ -2,6 +2,12 @@
     include 'db.php';
     include '../checks.php';
     header('Content-Type: application/json');
+    ob_end_clean();
+    try {
+    if (!$mysqli) {
+        echo json_encode(['error' => 'Database connection failed']);
+        exit();
+    }
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $data = json_decode(file_get_contents('php://input'), true);
         if (!checkIfUserExists($mysqli, $data['username']))
@@ -20,4 +26,8 @@
                 echo json_encode(['loggedIn' => false]);
         }
     }
+    } catch (Throwable $th) {
+        echo json_encode(['error' => $th->getMessage()]);
+    }
+    $mysqli->close();
 ?>
