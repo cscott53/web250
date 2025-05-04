@@ -6,6 +6,7 @@
     <title>Calm Sheep's used cars</title>
     <link rel="stylesheet" href="styles/default.css">
     <link rel="stylesheet" href="../styles/default.css">
+    <script src="../scripts/requests.js"></script>
     <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
 </head>
 <body>

@@ -6,6 +6,7 @@
     <title>Charles Scott - Calm Sheep - WEB250 - Final Project</title>
     <link rel="stylesheet" href="../styles/default.css">
     <link rel="stylesheet" href="styles/default.css">
+    <script src="../scripts/requests.js"></script>
     <script defer src="scripts/main.js"></script>
     <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
 </head>

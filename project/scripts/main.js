@@ -30,51 +30,34 @@ function saveBtn(e,type) {
     }
     row.children[row.children.length-1].innerHTML = `<button class="edit" onclick="editBtn(this)"><img src="images/edit.svg" alt="Edit"></button>
     <button class="delete" onclick="delBtn(this)"><img src="images/del.svg" alt="Delete"></button>`;
-    fetch('crud.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            id,
-            name,
-            quantity,
-            price,
-            action: type
-        })
-    }).then((res) => res.json()).then((data) => {
-        if (data.success) {
-            //alert('Updated successfully');
-        } else {
-            alert('Error updating:\n' + data.error);
-        }
-    }).catch((err) =>
-        alert('Error updating: ' + err)
-    );
+    HTTPRequest.post('crud.php', {id, name, quantity, price, action: type}, (res) => {
+        res.json().then((data) => {
+            if (data.success) {
+                //alert('Updated successfully');
+            } else {
+                alert('Error updating:\n' + data.error);
+            }
+        }).catch((err) =>
+            alert('Error updating: ' + err)
+        );
+    }, {'Content-Type': contentType.json})
 }
 function delBtn(e) {
     let row = e.parentElement.parentElement;
     let id = row.children[0].innerText;
     if (!confirm('Are you sure you want to delete this item?')) return;
-    fetch('crud.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            id,
-            action: 'del'
-        })
-    }).then((res) => res.json()).then((data) => {
-        if (data.success) {
-            //alert('Deleted successfully');
-            row.remove();
-        } else {
-            alert('Error deleting:\n' + data.error);
-        }
-    }).catch((err) =>
-        alert('Error deleting: ' + err)
-    );
+    HTTPRequest.post('crud.php', {id, action: 'del'}, (res) => {
+        res.json().then((data) => {
+            if (data.success) {
+                //alert('Deleted successfully');
+                row.remove();
+            } else {
+                alert('Error deleting:\n' + data.error);
+            }
+        }).catch((err) =>
+            alert('Error deleting: ' + err)
+        );
+    }, {'Content-Type': contentType.json});
 }
 function randChar() {
     return Math.floor(Math.random() * 36).toString(36);

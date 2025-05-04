@@ -49,32 +49,21 @@
             alert('Passwords do not match')
             return
         }
-        fetch('checkUser.php', {
-            method: 'POST',
-            body: JSON.stringify({
-                first,
-                last,
-                username,
-                password
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then((res) => res.json())
-        .then((data) => {
-            if (data.userExists) {
-                alert('User already exists')
-            } else if (data.userCreated) {
-                //alert('User created successfully')
-                location.href='?pg=loggedIn'
-                document.cookie = `user=${username}; path=/web250/project/; max-age=7200;`;
-                document.cookie = `loggedIn=true; path=/web250/project/; max-age=7200;`;
-            } else {
-                alert('Error creating user') //probably won't happen
-            }
-        }).catch((err) => {
-            console.error(err)
-            alert('Error creating user\n' + err)
-        })
+        HTTPRequest.post('checkUser.php', {first, last, username, password}, (res) => {
+            res.json().then((data) => {
+                if (data.userExists)
+                    alert('User already exists')
+                else if (data.userCreated) {
+                    //alert('User created successfully')
+                    location.href='?pg=loggedIn'
+                    document.cookie = `user=${username}; path=/web250/project/; max-age=7200;`;
+                    document.cookie = `loggedIn=true; path=/web250/project/; max-age=7200;`;
+                } else
+                    alert('Error creating user') //probably won't happen
+            }).catch((error) => {
+                console.error('Error:', error);
+                alert('Error:\n' + error);
+            });
+        });
     }
 </script>

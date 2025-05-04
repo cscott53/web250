@@ -49,30 +49,16 @@
             alert('Passwords do not match')
             return
         }
-        fetch('checkUser.php', {
-            method: 'POST',
-            body: JSON.stringify({
-                first,
-                last,
-                username,
-                password
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then((res) => res.json())
-        .then((data) => {
-            if (data.userExists) {
-                alert('User already exists')
-            } else if (data.userCreated) {
-                alert('User created successfully')
-                location.href='?pg=userTable'
-            } else {
-                alert('Error creating user')
-            }
-        }).catch((err) => {
-            console.error(err)
-            alert('Error creating user\n' + err)
-        })
+        HTTPRequest.post('newUser.php', {first, last, username, password}, (res) => {
+            res.json().then((data) => {
+                if (data.success) {
+                    alert('User created successfully')
+                    location.href = '?pg=login'
+                } else  alert('Error creating user: ' + data.error)
+            }).catch((error) => {
+                console.error('Error:', error);
+                alert('Error:\n' + error);
+            });
+        }, {'Content-Type': contentType.json});
     }
 </script>
