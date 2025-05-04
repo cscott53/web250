@@ -32,11 +32,8 @@ function saveBtn(e,type) {
     <button class="delete" onclick="delBtn(this)"><img src="images/del.svg" alt="Delete"></button>`;
     HTTPRequest.post('crud.php', {id, name, quantity, price, action: type}, (res) => {
         res.json().then((data) => {
-            if (data.success) {
-                //alert('Updated successfully');
-            } else {
+            if (!data.success)
                 alert('Error updating:\n' + data.error);
-            }
         }).catch((err) =>
             alert('Error updating: ' + err)
         );
@@ -48,12 +45,8 @@ function delBtn(e) {
     if (!confirm('Are you sure you want to delete this item?')) return;
     HTTPRequest.post('crud.php', {id, action: 'del'}, (res) => {
         res.json().then((data) => {
-            if (data.success) {
-                //alert('Deleted successfully');
-                row.remove();
-            } else {
-                alert('Error deleting:\n' + data.error);
-            }
+            if (data.success) row.remove();
+            else alert('Error deleting:\n' + data.error);
         }).catch((err) =>
             alert('Error deleting: ' + err)
         );
