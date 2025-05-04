@@ -30,7 +30,6 @@
                 </a>
                 HTML;
                 unset($row['VIN']);
-                //unset($row['Year']);
                 $rows[$key]=$row;
             })();
         }

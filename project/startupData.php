@@ -34,14 +34,13 @@
         ('{$ids[3]}','Keyboard',50,30.00),
         ('{$ids[4]}','Mouse',70,30.00)
         SQL;
-        //echo $insertQuery.";\n";
         $res=$mysqli->query($insertQuery);
         if ($res) {
             echo "Table created and data inserted successfully.";
         } else {
             echo "Error: " . $mysqli->error;
         }
-    } catch (\Throwable $th) {
+    } catch (Throwable $th) {
         echo $th;
     }
 ?>

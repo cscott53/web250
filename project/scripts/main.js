@@ -1,12 +1,7 @@
-function getCookie() {
-    if (!document.cookie) return {};
-    let items = document.cookie.split('; ');
-    let data = {};
-    items.forEach((e) => {
-        let [key, val] = e.split('=');
-        data[key] = decodeURIComponent(val);
-    });
-    return data;
+function expireInHours(hour) {
+    let date = new Date();
+    date.setHours(date.getHours() + hour);
+    return date.toUTCString();
 }
 let prevRow;
 function editBtn(e) {

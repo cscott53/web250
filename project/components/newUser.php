@@ -54,10 +54,18 @@
                 if (data.userExists)
                     alert('User already exists')
                 else if (data.userCreated) {
-                    //alert('User created successfully')
+                    HTTPRequest.post('session.php', {
+                        loggedIn: true,
+                        user: username
+                    }, (res) => {
+                        res.json().then((data) => {
+                            if (!data.success) alert('Error creating user')
+                        }).catch((error) => {
+                            console.error('Error:', error);
+                            alert('Error:\n' + error);
+                        });
+                    });
                     location.href='?pg=loggedIn'
-                    document.cookie = `user=${username}; path=/web250/project/; max-age=7200;`;
-                    document.cookie = `loggedIn=true; path=/web250/project/; max-age=7200;`;
                 } else
                     alert('Error creating user') //probably won't happen
             }).catch((error) => {

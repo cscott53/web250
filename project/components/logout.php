@@ -1,9 +1,21 @@
 <p>Successfully logged out</p>
 <a href="?pg=login">Login</a>
 <script>
-    let today = new Date();
-    today.setTime(today.getTime() - (1000 * 60 * 60 * 24));
-    let expires = today.toUTCString();
-    document.cookie = 'loggedIn=; path=/web250/project/; expires=' + expires;
-    document.cookie = 'user=; path=/web250/project/; expires=' + expires;
+    HTTPRequest.post('session.php', {
+        loggedIn: false,
+        user: ''
+    }, (res) => {
+        res.text().then((data) => {
+            try {
+                data = JSON.parse(data);
+                if (!data.success) alert('Error logging out');
+            } catch (error) {
+                console.log(data);
+                alert('Error:\n' + error);
+            }
+        }).catch((error) => {
+            console.error('Error:', error);
+            alert('Error:\n' + error);
+        });
+    });
 </script>

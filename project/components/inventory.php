@@ -1,8 +1,9 @@
 <?php
     include 'db.php';
     include 'queryOutput.php';
-    $loggedin = $_COOKIE['loggedIn'] ?? false;
-    $user = $_COOKIE['user'] ?? '';
+    if (session_id() == '') session_start();
+    $loggedin = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
+    $user = $_SESSION['user'] ?? '';
     if ($loggedin)
         echo <<<HTML
         <p>Welcome $user</p>

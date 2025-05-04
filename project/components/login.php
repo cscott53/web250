@@ -14,9 +14,22 @@
         HTTPRequest.post('loginCheck.php', {username, password}, (res) => {
             res.json().then((data) => {
             if (data.loggedIn) {
-                location.href = '?pg=loggedIn';
-                    document.cookie = `user=${username}; path=/web250/project/; max-age=7200;`;
-                    document.cookie = `loggedIn=true; path=/web250/project/; max-age=7200;`;
+                HTTPRequest.post('session.php', {
+                    loggedIn: true,
+                    user: username
+                }, (res) => {
+                    res.json().then((data) => {
+                        console.log(data);
+                        if (!data.success) alert('Error logging in');
+                        else {
+                            document.cookie = `PHPSESSID=${data.PHPSESSID}; path=${location.pathname}; expires=${expireInHours(1)}`;
+                            location.href = '?pg=loggedIn';
+                        }
+                    }).catch((error) => {
+                        console.error('Error:', error);
+                        alert('Error:\n' + error);
+                    });
+                });
                 } else alert('Invalid username or password');
             }).catch((error) => {
                 console.error('Error:', error);
