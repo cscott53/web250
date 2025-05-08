@@ -100,6 +100,9 @@ figure img {
 footer {
     width: inherit;
 }
+footer p {
+    text-align: center;
+}
 fieldset {
     all: unset;
     width: 40%;
