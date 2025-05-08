@@ -8,9 +8,6 @@ html,body {
 body {
     background: orange;
 }
-.in-text-link {
-    color: #005aff;
-}
 h1 {
     text-align: center;
 }
@@ -40,7 +37,7 @@ main {
     overflow: auto;
     flex: 1;
 }
-nav ul {
+nav ul:not(#externalLinks) {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -61,10 +58,36 @@ nav li {
     padding-left: .5em;
     padding-right: .5em;
 }
+#externalLinks {
+    flex-direction: column;
+    padding: 0;
+    position: absolute;
+    /* border: 1px solid #ffa500; */
+    transform: translateY(calc(50% + .8em));
+    background-color: black;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s linear;
+}
+#externalLinks.show {
+    max-height: 7.5em;
+}
+#externalLinks li {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+}
+#externalLinks li:not(:first-child) {
+    border-top: .5px solid orange;
+}
+#externalLinks li:not(:last-child) {
+    border-bottom: .5px solid orange;
+}
 figure {
     width: fit-content;
     float: right;
 }
+
 figcaption {
     font-style: italic;
     text-align: center;
@@ -77,12 +100,9 @@ figure img {
 footer {
     width: inherit;
 }
-.flexbreak {
-    flex-basis: 100%;
-}
 fieldset {
     all: unset;
-    width: 32%;
+    width: 40%;
     display: block;
 }
 button {
@@ -105,10 +125,19 @@ fieldset,div.formrow {
     border-radius: 3px;
 }
 .course {
+    font-size: 1.2em;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
-    margin: 4px auto;
+    margin: 8px auto;
+}
+.course input {
+    width: 10em;
+    height: 1.5em;
+}
+.course textarea {
+    width: 10em;
+    height: 3em;
 }
 .course .imgBtn {
     position: relative;

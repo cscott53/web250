@@ -11,10 +11,10 @@
     document.getElementById('login').onclick=() => {
         let username = document.getElementById('username').value;
         let password = document.getElementById('password').value;
-        HTTPRequest.post('login.php', {username, password}, (res) => {
+        HTTPRequest.post('loginCheck.php', {username, password}, (res) => {
             res.json().then((data) => {
                 if (data.loggedIn) {
-                    location.href = '?pg=loggedIn';
+                    location.href = '?pg=userTable';
                     document.cookie = `user=${username}; path=/web250/project/; max-age=7200;`;
                     document.cookie = `loggedIn=true; path=/web250/project/; max-age=7200;`;
                 } else alert('Invalid username or password');

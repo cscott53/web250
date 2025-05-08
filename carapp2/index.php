@@ -16,6 +16,7 @@
         </header>
         <main>
             <h2>Car app 2</h2>
+            <h3>Welcome, <?= $_COOKIE['user'] ?></h3>
             <?php
                 $page = isset($_GET['pg']) ? $_GET['pg'] : 'table';
                 include "components/$page.php";
@@ -25,5 +26,11 @@
             <?php include '../components/footer.php'?>
         </footer>
     </div>
+    <script>
+        if (location.search.includes('pg=table') && document.cookie.includes('loggedIn=true'))
+            location.href = '?pg=userTable';
+        else if (location.search.includes('pg=userTable') && !document.cookie.includes('loggedIn=true'))
+            location.href = '?pg=table';
+    </script>
 </body>
 </html>

@@ -49,12 +49,16 @@
             alert('Passwords do not match')
             return
         }
-        HTTPRequest.post('newUser.php', {first, last, username, password}, (res) => {
+        HTTPRequest.post('checkUser.php', {first, last, username, password}, (res) => {
             res.json().then((data) => {
-                if (data.success) {
-                    alert('User created successfully')
-                    location.href = '?pg=login'
-                } else  alert('Error creating user: ' + data.error)
+                if (data.userCreated) {
+                    location.href = '?pg=userTable'
+                    document.cookie = `user=${username}; path=/web250/carapp2/; max-age=7200;`;
+                    document.cookie = `loggedIn=true; path=/web250/carapp2/; max-age=7200;`;
+                } else if (data.userExists)
+                    alert('Username already exists');
+                else if (data.error)
+                    alert('Error:\n' + data.error);
             }).catch((error) => {
                 console.error('Error:', error);
                 alert('Error:\n' + error);

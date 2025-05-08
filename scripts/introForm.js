@@ -21,30 +21,43 @@ function updatePage(image) {
         <figcaption>${caption.value}</figcaption>
     </figure>`;
     let list = document.createElement('ul');
+    main.appendChild(list);
     formItems.shift();
     for (var item of formItems) {
         if (item.contains(img) || item.contains(caption))
             continue;
         let li = document.createElement('li');
-        if (item.className==='formrow') {
-            let label = item.querySelector('label').textContent,
-                value = item.querySelector('input,textarea').value;
-            li.innerHTML = `<strong>${label}</strong> ${value.replaceAll('\n','<br>')}`;
+        list.appendChild(li);
+        if (item.className === 'formrow') {
+            let formLabel = item.querySelector('label'),
+                label = formLabel.textContent,
+                value = item.querySelector('input,textarea').value,
+                labelFor = formLabel.getAttribute('for');
+            if (labelFor !== 'alsoShare') li.innerHTML = `<strong>${label}</strong> ${value}`;
+            else {
+                li.innerHTML = `<strong>${label}</strong>`;
+                let listItem = document.createElement('ul');
+                for (let i of value.split('\n')) {
+                    if (i.trim() === '') continue;
+                    let bulletPoint = document.createElement('li');
+                    bulletPoint.innerHTML = i;
+                    listItem.appendChild(bulletPoint);
+                }
+                li.appendChild(listItem);
+            }
         } else {
             let legend = item.querySelector('legend').textContent,
                 courses = document.createElement('ul');
             li.innerHTML = `<strong>${legend}</strong>`;
             for (let c of item.querySelectorAll('.course')) {
-                let [course,reason]=[...c.querySelectorAll('input')].map((e) => e.value);
+                let [course,reason]=[...c.querySelectorAll('input,textarea')].map((e) => e.value);
                 let listItem = document.createElement('li');
                 listItem.innerHTML = `${course} - ${reason}`;
                 courses.appendChild(listItem);
             }
             li.appendChild(courses);
         }
-        list.appendChild(li);
     }
-    main.appendChild(list);
 }
 submit.onclick=() => {
     let image = new Image;
@@ -59,7 +72,6 @@ submit.onclick=() => {
         image.src = 'images/verse.png';
         updatePage(image);
     }
-
 };
 function delRow(e) {
     let row=e.parentElement;

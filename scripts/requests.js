@@ -18,7 +18,7 @@ var contentType;
     contentType["text"] = "text/plain";
     contentType["xml"] = "application/xml";
     contentType["html"] = "text/html";
-    contentType["image"] = "image/*";
+    contentType["image"] = "image/\x2a";
     contentType["pdf"] = "application/pdf";
 })(contentType || (contentType = {}));
 var HTTPRequest = /** @class */ (function () {
